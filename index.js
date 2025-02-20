@@ -31,9 +31,9 @@ app.use(
 );
 
 // Routes
-app.use("/api/auth", authRouter);
-app.use("/api", skRouter);
-app.use("/api", wtRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api", skRouter);
+// app.use("/api", wtRouter);
 
 // Test Route
 app.get("/", (req, res) => {
