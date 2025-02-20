@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-// import authRouter from "./routes/auth.route.js";
-// import skRouter from "./routes/sk.route.js";
-// import wtRouter from "./routes/wk.route.js";
+import authRouter from "./routes/auth.route.js";
+import skRouter from "./routes/sk.route.js";
+import wtRouter from "./routes/wk.route.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -31,9 +31,9 @@ app.use(
 );
 
 // Routes
-// app.use("/api/auth", authRouter);
-// app.use("/api", skRouter);
-// app.use("/api", wtRouter);
+app.use("/api/auth", authRouter);
+app.use("/api", skRouter);
+app.use("/api", wtRouter);
 
 // Test Route
 app.get("/", (req, res) => {
