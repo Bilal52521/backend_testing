@@ -5,11 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Test API working...");
-});
-
-app.get("/test", (req, res) => {
+app.get("/api/test", (req, res) => {
   res.send("Testing API working...");
 });
 
