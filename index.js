@@ -26,7 +26,7 @@ app.use("/api", skRouter);
 app.use("/api", wtRouter);
 
 // Test Route
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
   res.send("Testing API working...");
 });
 
