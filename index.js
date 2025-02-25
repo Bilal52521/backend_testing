@@ -5,7 +5,6 @@ import authRouter from "./routes/auth.route.js";
 import skRouter from "./routes/sk.route.js";
 import wtRouter from "./routes/wk.route.js";
 
-// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
@@ -14,8 +13,8 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:3000"], // Allow requests from the React app
-    credentials: true, // Allow cookies and credentials
+    origin: ["http://localhost:3000"],
+    credentials: true,
   })
 );
 app.use(express.json());
@@ -28,6 +27,10 @@ app.use("/api", wtRouter);
 // Test Route
 app.get("/test", (req, res) => {
   res.send("Testing API working...");
+});
+
+app.get("/", (req, res) => {
+  res.send("Default Testing API working...");
 });
 
 // Start the server
