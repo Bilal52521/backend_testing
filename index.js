@@ -8,6 +8,7 @@ import wtRouter from "./routes/wk.route.js";
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(
@@ -31,5 +32,10 @@ app.get("/test", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Default Testing API working...");
 });
+
+// Start the server
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
 
 export default app;
