@@ -19,9 +19,9 @@ app.use(
 app.use(express.json());
 
 // Routes
-app.use("/api/auth", authRouter);
-app.use("/api", skRouter);
-app.use("/api", wtRouter);
+// app.use("/api/auth", authRouter);
+// app.use("/api", skRouter);
+// app.use("/api", wtRouter);
 
 // Test Routes
 app.get("/test", (req, res) => {
