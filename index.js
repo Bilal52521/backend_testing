@@ -33,4 +33,6 @@ app.get("/", (req, res) => {
   res.send("Default Testing API working...");
 });
 
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
