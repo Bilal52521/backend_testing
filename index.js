@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 import skRouter from "./routes/sk.route.js";
 import wtRouter from "./routes/wk.route.js";
+import "./config/db.js"; // Ensure database is loaded
 
 dotenv.config();
 
@@ -34,5 +35,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
