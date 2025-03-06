@@ -8,11 +8,7 @@ const WT = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    c_cnic: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
+
     c_mobile: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 import skRouter from "./routes/sk.route.js";
 import wtRouter from "./routes/wk.route.js";
-import "./config/db.js"; // Ensure database is loaded
+import "./config/db.js";
+
 
 dotenv.config();
 
