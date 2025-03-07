@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 import authRouter from "./routes/auth.route.js";
 import skRouter from "./routes/sk.route.js";
 import wtRouter from "./routes/wk.route.js";
+import searchRouter from "./routes/search.route.js";
 import "./config/db.js";
-
 
 dotenv.config();
 
@@ -25,6 +25,7 @@ app.use(
 app.use("/api/auth", authRouter);
 app.use("/api", skRouter);
 app.use("/api", wtRouter);
+app.use("/api", searchRouter);
 
 // Test Routes
 app.get("/test", (req, res) => {
