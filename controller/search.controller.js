@@ -1,5 +1,5 @@
-import SK from "../models/skModel.js";
-import WT from "../models/wtModel.js";
+import SK from "../model/sk.model.js";
+import WT from "../model/wk.model.js";
 import { Op } from "sequelize";
 
 export const searchController = async (req, res) => {
