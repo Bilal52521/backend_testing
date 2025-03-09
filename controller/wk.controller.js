@@ -20,15 +20,14 @@ export const wtGetAll = async (req, res, next) => {
 
 export const wtAddNew = async (req, res, next) => {
   try {
-    const { c_name, c_cnic, c_mobile, bookno } = req.body;
+    const { c_name, c_mobile, bookno } = req.body;
 
-    if (!c_name || !c_cnic || !c_mobile) {
+    if (!c_name || !c_mobile) {
       return res.status(400).json({ message: "All fields are required!" });
     }
 
     const newCustomer = await WT.create({
       c_name,
-      c_cnic,
       c_mobile,
       bookno,
     });
@@ -68,16 +67,16 @@ export const wtDelete = async (req, res) => {
 export const wtUpdate = async (req, res) => {
   try {
     const { id } = req.params;
-    const { c_name, c_cnic, c_mobile, bookno } = req.body;
+    const { c_name, c_mobile, bookno } = req.body;
 
-    if (!c_name && !c_cnic && !c_mobile && !bookno) {
+    if (!c_name && !c_mobile && !bookno) {
       return res
         .status(400)
         .json({ message: "At least one field is required to update!" });
     }
 
     const updatedWT = await WT.update(
-      { c_name, c_cnic, c_mobile, bookno },
+      { c_name, c_mobile, bookno },
       { where: { id } }
     );
 
