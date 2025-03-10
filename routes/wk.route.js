@@ -8,7 +8,7 @@ import {
 
 const router = express.Router();
 
-router.post("/wt/add-sk", wtAddNew);
+router.post("/wt/add-wt", wtAddNew);
 
 router.get("/wt", wtGetAll);
 router.delete("/wt/:id", wtDelete);
