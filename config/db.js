@@ -13,15 +13,33 @@ const sequelize = new Sequelize(
     dialect: "mysql",
     dialectModule: mysql2,
     logging: false,
+
+    pool: {
+      max: 15,
+      min: 5,
+      acquire: 30000,
+      idle: 10000,
+      evict: 5000,
+    },
+
+    dialectOptions: {
+      multipleStatements: true,
+      supportBigNumbers: true,
+      bigNumberStrings: true,
+    },
+
+    retry: {
+      max: 3,
+    },
   }
 );
 
 const validateConnection = async () => {
   try {
     await sequelize.authenticate();
-    console.log("✅ Database connected successfully.");
+    console.log("Database connected successfully.");
   } catch (error) {
-    console.error("❌ Unable to connect to the database:", error);
+    console.error("Unable to connect to the database");
   }
 };
 
